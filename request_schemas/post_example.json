@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "POST /example",
+  "type": "object",
+  "properties": {
+    "test_bool": { "type": "boolean" },
+    "test_string": { "type": "string" },
+    "test_object": { "type": "object" },
+    "test_int": { "type": "integer" },
+    "statusCode": { "type": "integer" }
+  },
+  "required": ["test_bool", "test_string", "statusCode"],
+  "additionalProperties": false
+}
