@@ -140,4 +140,4 @@ resource "aws_api_gateway_method_response" "response_200" {
         ```
       - Should return `200` and `no data`
 
-I hope this helps! Here is the link to the code in my github!
+I hope this helps! [Here is the link to the code in my github!](https://github.com/iNeedICS/terraform-examples)
