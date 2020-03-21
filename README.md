@@ -103,6 +103,23 @@ resource "aws_api_gateway_method_response" "response_200" {
 
 > Note: Integration Response is only required due to the backend being of type `MOCK`
 
+```javascript
+resource "aws_api_gateway_integration" "the" {
+  rest_api_id = aws_api_gateway_rest_api.the.id
+  resource_id = aws_api_gateway_method.the.resource_id
+  http_method = aws_api_gateway_method.the.http_method
+  type        = "MOCK"
+}
+
+resource "aws_api_gateway_integration_response" "the" {
+  depends_on  = [aws_api_gateway_integration.the]
+  rest_api_id = aws_api_gateway_rest_api.the.id
+  resource_id = aws_api_gateway_resource.the.id
+  http_method = aws_api_gateway_method.the.http_method
+  status_code = aws_api_gateway_method_response.response_200.status_code
+}
+```
+
 ### Step 5: Test It Out
 
 - Head on over to the API Gateway console in AWS, and find your API.
